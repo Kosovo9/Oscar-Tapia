@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pichristmas.netlify.app/sitemap.xml

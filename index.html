@@ -1,10 +1,28 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oscar Tapia | Landgrow México</title>
+    <title>Nexora Luxury | Oscar Tapia - Real Estate Excellence</title>
+    <meta name="description" content="Descubre el lujo y la exclusividad con Oscar Tapia en Nexora Luxury. Inversiones inmobiliarias de alto nivel en México y el mundo. Experiencia 10x impulsada por IA.">
+    <meta name="keywords" content="Real Estate, Luxury, Landgrow, Oscar Tapia, Inversiones, México, IA, Luxury Real Estate">
+    <meta name="author" content="Oscar Tapia">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pichristmas.netlify.app/">
+    <meta property="og:title" content="Nexora Luxury | Oscar Tapia - Inversiones de Élite">
+    <meta property="og:description" content="Propiedades exclusivas e inversiones inteligentes con tecnología de punta.">
+    <meta property="og:image" content="https://pichristmas.netlify.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pichristmas.netlify.app/">
+    <meta property="twitter:title" content="Nexora Luxury | Oscar Tapia">
+    <meta property="twitter:description" content="Inversiones inmobiliarias de alto nivel en México.">
+    <meta property="twitter:image" content="https://pichristmas.netlify.app/og-image.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +33,13 @@
         --gold-light: #E8D3A3;
         --navy: #0A1128;
         --navy-dark: #070D1E;
+        --white: #F5F5F5;
       }
       
       body {
         font-family: 'Inter', sans-serif;
         background-color: var(--navy);
-        color: #F5F5F5;
+        color: var(--white);
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
       }
@@ -49,56 +68,64 @@
       .btn-gold {
         background: linear-gradient(135deg, var(--gold) 0%, #D4AF37 100%);
         transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
       }
       
       .btn-gold:hover {
         filter: brightness(1.1);
         transform: translateY(-2px);
-        box-shadow: 0 20px 40px rgba(197, 160, 89, 0.25);
+        box-shadow: 0 20px 40px rgba(197, 160, 89, 0.4);
       }
       
       .glass-card {
         background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       }
       
       .glass-card:hover {
-        transform: translateY(-8px);
-        background: rgba(255, 255, 255, 0.04);
-        border-color: rgba(197, 160, 89, 0.2);
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+        transform: translateY(-10px) scale(1.02);
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(197, 160, 89, 0.3);
+        box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
       }
 
-      .hero-title-mask {
-        mask-image: linear-gradient(to bottom, white 50%, transparent 100%);
+      @keyframes aurora {
+        0% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(-10%, 10%) scale(1.1); }
+        100% { transform: translate(0, 0) scale(1); }
       }
 
-      @keyframes fade-in-up {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .animate-fade-up {
-        animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      .aurora-bg {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 70% 30%, rgba(10, 17, 40, 0.1) 0%, transparent 50%);
+        animation: aurora 20s infinite alternate;
+        z-index: -1;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom": "https://esm.sh/react-dom@^19.2.3",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+        "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+      }
+    }
+    </script>
+  </head>
   <body>
+    <div class="aurora-bg"></div>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
+
