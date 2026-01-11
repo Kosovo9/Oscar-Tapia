@@ -2,10 +2,8 @@
   command = "npm run build"
   publish = "dist"
 
-[context.production.environment]
-  NODE_ENV = "production"
-  # These will be set in the Netlify UI but adding here for reference if safe
-  # However, it's better to set them in the UI as requested.
+[build.environment]
+  NPM_FLAGS = "--include=dev"
 
 [[redirects]]
   from = "/*"
