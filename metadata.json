@@ -1,0 +1,8 @@
+{
+  "name": "Nexora Luxury Landing - Oscar Tapia",
+  "description": "A high-end, bilingual professional landing page featuring Gemini-powered AI portrait editing and voice concierge services.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
